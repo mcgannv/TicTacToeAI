@@ -1,4 +1,4 @@
-package mcgannv;
+package tictactoe;
 
 public class Main {
 
