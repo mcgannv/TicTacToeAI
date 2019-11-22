@@ -1,0 +1,14 @@
+.idea
+
+.idea/gradle.xml
+.idea/libraries
+
+out
+hs_err_pid*
+*.class
+
+gradle
+build
+
+out.txt
+log.txt
