@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="341.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Would you like to go first?">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="341.0">
+         <children>
+            <RadioButton fx:id="yesRadioBtn" mnemonicParsing="false" text="Yes">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="turnGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="noRadioBtn" mnemonicParsing="false" text="No" toggleGroup="$turnGroup" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <Label text="Would you like to be X or O?" />
+      <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="341.0">
+         <children>
+            <RadioButton mnemonicParsing="false" text="X" fx:id="xRadioBtn">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <toggleGroup>
+                  <ToggleGroup fx:id="shapeGroup" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="oRadioBtn" mnemonicParsing="false" text="O" toggleGroup="$shapeGroup" />
+         </children>
+         <VBox.margin>
+            <Insets bottom="20.0" top="5.0" />
+         </VBox.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="98.0" prefWidth="341.0">
+         <children>
+            <Button fx:id="acceptBtn" mnemonicParsing="false" text="Accept" />
+            <Button fx:id="cancelBtn" mnemonicParsing="false" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</VBox>
