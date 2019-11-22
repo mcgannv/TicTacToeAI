@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="170.0" prefWidth="341.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tictactoe.StartUpController">
    <children>
       <Label text="Would you like to go first?">
@@ -51,8 +50,8 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="98.0" prefWidth="341.0">
          <children>
-            <Button fx:id="acceptBtn" mnemonicParsing="false" text="Accept" />
-            <Button fx:id="cancelBtn" mnemonicParsing="false" text="Cancel" />
+            <Button fx:id="acceptBtn" disable="true" mnemonicParsing="false" onAction="#acceptHandler" onMouseReleased="#checkToggles" text="Accept" />
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#closeHandler" text="Cancel" />
          </children>
       </HBox>
    </children>
