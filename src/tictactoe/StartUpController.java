@@ -26,6 +26,8 @@ public class StartUpController {
 
     private TicTacToeController ticTacToeController;
     private Stage stage2;
+    private Board board;
+    private Game game;
 
     public void setMainController(TicTacToeController mainController, Stage stage2) {
         this.ticTacToeController = mainController;
@@ -37,21 +39,28 @@ public class StartUpController {
         Player player;
         ComputerPlayer computerPlayer;
         Turn turn;
+        Square square;
+        board = new Board();
         if (turnGroup.getSelectedToggle() == yesRadioBtn) {
-            turn = Turn.HUMAN;
+            turn = Turn.PLAYER;
+            square = Square.HUMAN;
         } else {
             turn = Turn.COMPUTER;
+            square = Square.COMPUTER;
         }
-
         if (shapeGroup.getSelectedToggle() == xRadioBtn) {
             player = new Player('X');
-            computerPlayer = new ComputerPlayer('O');
+            computerPlayer = new ComputerPlayer('O', board);
         } else {
             player = new Player('O');
-            computerPlayer = new ComputerPlayer('X');
+            computerPlayer = new ComputerPlayer('X', board);
         }
-        ticTacToeController.setPlayers(player, computerPlayer, turn);
+        game = new Game(ticTacToeController, turn, board, computerPlayer);
+        ticTacToeController.setNewGame(player, game, square);
+        ticTacToeController.resetButtons();
         closeHandler();
+        deselectRadio();
+        game.play();
     }
 
     @FXML
@@ -66,5 +75,12 @@ public class StartUpController {
     @FXML
     public void closeHandler() {
         stage2.close();
+    }
+
+    private void deselectRadio() {
+        yesRadioBtn.setSelected(false);
+        noRadioBtn.setSelected(false);
+        xRadioBtn.setSelected(false);
+        oRadioBtn.setSelected(false);
     }
 }

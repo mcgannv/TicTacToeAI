@@ -1,7 +1,13 @@
 package tictactoe;
 
-public abstract class Player {
-    char shape;
+public class Player {
+    private char piece;
 
-    public abstract void chooseSquare();
+    public Player(char piece) {
+        this.piece = piece;
+    }
+
+    public char getPiece() {
+        return piece;
+    }
 }

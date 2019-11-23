@@ -8,20 +8,16 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    public static void main(String[] args) {
-        launch(args);
-    }
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader1 = new FXMLLoader();
-        loader1.setLocation(getClass().getResource("../../resources/tictactoeUI.fxml"));
+        loader1.setLocation(Main.class.getClassLoader().getResource("tictactoeUI.fxml"));
         Parent root = loader1.load();
         primaryStage.setTitle("TicTacToe");
         primaryStage.setScene(new Scene(root));
 
         FXMLLoader loader2 = new FXMLLoader();
-        loader2.setLocation(getClass().getResource("../../resources/StartupChoice.fxml"));
+        loader2.setLocation(Main.class.getClassLoader().getResource("StartupChoice.fxml"));
         Parent root2 = loader2.load();
         Stage stage2 = new Stage();
         stage2.setTitle("What would you like to play?");
@@ -29,9 +25,13 @@ public class Main extends Application {
 
         TicTacToeController mainController = loader1.getController();
         StartUpController startUpController = loader2.getController();
-        startUpController.setMainController(mainController);
-        mainController.setStartupController(startUpController);
+        startUpController.setMainController(mainController, stage2);
+        mainController.setSecondStage(stage2);
 
         primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

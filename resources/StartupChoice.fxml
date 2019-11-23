@@ -17,7 +17,7 @@
       </Label>
       <HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="341.0">
          <children>
-            <RadioButton fx:id="yesRadioBtn" mnemonicParsing="false" text="Yes">
+            <RadioButton fx:id="yesRadioBtn" mnemonicParsing="false" onMouseClicked="#checkToggles" text="Yes">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
@@ -25,7 +25,7 @@
                   <ToggleGroup fx:id="turnGroup" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="noRadioBtn" mnemonicParsing="false" text="No" toggleGroup="$turnGroup" />
+            <RadioButton fx:id="noRadioBtn" mnemonicParsing="false" onMouseClicked="#checkToggles" text="No" toggleGroup="$turnGroup" />
          </children>
          <VBox.margin>
             <Insets bottom="20.0" top="5.0" />
@@ -34,7 +34,7 @@
       <Label text="Would you like to be X or O?" />
       <HBox alignment="TOP_CENTER" prefHeight="29.0" prefWidth="341.0">
          <children>
-            <RadioButton mnemonicParsing="false" text="X" fx:id="xRadioBtn">
+            <RadioButton mnemonicParsing="false" onMouseClicked="#checkToggles" text="X" fx:id="xRadioBtn">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
@@ -42,7 +42,7 @@
                   <ToggleGroup fx:id="shapeGroup" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="oRadioBtn" mnemonicParsing="false" text="O" toggleGroup="$shapeGroup" />
+            <RadioButton fx:id="oRadioBtn" mnemonicParsing="false" onMouseClicked="#checkToggles" text="O" toggleGroup="$shapeGroup" />
          </children>
          <VBox.margin>
             <Insets bottom="20.0" top="5.0" />
@@ -50,7 +50,7 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="98.0" prefWidth="341.0">
          <children>
-            <Button fx:id="acceptBtn" disable="true" mnemonicParsing="false" onAction="#acceptHandler" onMouseReleased="#checkToggles" text="Accept" />
+            <Button fx:id="acceptBtn" disable="true" mnemonicParsing="false" onAction="#acceptHandler" text="Accept" />
             <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#closeHandler" text="Cancel" />
          </children>
       </HBox>
